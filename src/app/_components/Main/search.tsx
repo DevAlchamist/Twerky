@@ -1,11 +1,29 @@
+"use client"
 import { SearchOutlined } from "@mui/icons-material";
-import { Box, TextField } from "@mui/material";
+import { IconButton, InputBase, Paper } from "@mui/material";
 
 export const Search = () => {
   return (
-    <div className="w-full flex h-[51px]">
-        <SearchOutlined className="absolute top-[38.5px] left-[470px]"/>
-      <textarea placeholder="Search..." className="pt-3 pl-12 bg-transparent border w-full rounded-[50px] resize-none outline-none" ></textarea>
-    </div>
+    <Paper
+    className="bg-transparent bg-opacity-25 w-full"
+      component="form"
+      sx={{
+        borderRadius: "40px",
+        backgroundColor:"rgba(42, 163, 239, 0.5)",
+        p: "2px 4px",
+        display: "flex",
+        alignItems: "center",
+        width: 563,
+      }}
+    >
+      <IconButton type="button" sx={{ p: "10px", color:"white" }} aria-label="search">
+        <SearchOutlined />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1 , color:"white"}}
+        placeholder="Search..."
+        inputProps={{ "aria-label": "search google maps" }}
+      />
+    </Paper>
   );
 };
