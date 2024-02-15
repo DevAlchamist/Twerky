@@ -9,14 +9,15 @@ import {
 import Icon from "./icon";
 import AppIcon from "./appIcon";
 import { Box } from "@mui/material";
+import Link from "next/link";
 
 const Sidebar = () => {
   const icons = [
-    { title: "Home", headIcon: <Home /> },
+    { title: "Home", headIcon: <Home />, route: "/" },
     { title: "Notification", headIcon: <Notifications /> },
     { title: "Trending", headIcon: <Whatshot /> },
     { title: "Personalization", headIcon: <Style /> },
-    { title: "Profile", headIcon: <Person /> },
+    { title: "Profile", headIcon: <Person />, route: `/Profile` },
     { title: "Setting", headIcon: <Settings /> },
   ];
   return (
@@ -28,11 +29,13 @@ const Sidebar = () => {
       <Box className=" flex row-span-4 flex-col items-start justify-between">
         {icons.map((icon) => (
           <Box className="rounded-lg px-3 ">
-            <Icon
-              key={icon.title}
-              title={icon.title}
-              headIcon={icon.headIcon}
-            />
+            <Link href={icon?.route ? icon.route : ""}>
+              <Icon
+                key={icon.title}
+                title={icon.title}
+                headIcon={icon.headIcon}
+              />
+            </Link>
           </Box>
         ))}
       </Box>
