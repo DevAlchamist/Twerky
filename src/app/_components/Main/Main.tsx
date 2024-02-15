@@ -7,10 +7,12 @@ import { Post } from "./post";
 
 const Main = () => {
   return (
-    <Box className="w-full full flex mt-14 flex-col justify-center items-center">
+    <Box className="w-full flex my-2 flex-col justify-center items-center">
       <Search />
-      <PfpSection />
-      <Post />
+      <Box className=" overflow-y-auto h-[580px] w-full scrollbar-hide my-3">
+        <PfpSection />
+        <Post />
+      </Box>
     </Box>
   );
 };

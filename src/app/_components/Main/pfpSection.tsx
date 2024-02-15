@@ -13,17 +13,19 @@ import pfp7 from "../../../../public/images/young-beautiful-woman-pink-warm-swea
 
 interface PfpSectionProps {
   name?: string;
+  imgNo?: number;
   image?: Buffer | HTMLImageElement;
+  show?: boolean;
 }
 
-export const PfpSection = ({ image, name }: PfpSectionProps) => {
+export const PfpSection = ({ image, name, show, imgNo }: PfpSectionProps) => {
   const photos = [pfp1, pfp2, pfp3, pfp4, pfp5, pfp6, pfp7];
   // Generate random indices for the photos array
   function generateUniqueRandomIndices(arr: Array<StaticImageData>) {
     let uniqueIndices = new Set<number>();
 
     // Generate random indices until 7 unique indices are obtained
-    while (uniqueIndices.size <= 5) {
+    while (uniqueIndices.size <= 5 || imgNo) {
       uniqueIndices.add(Math.floor(Math.random() * arr.length));
     }
 
@@ -32,10 +34,12 @@ export const PfpSection = ({ image, name }: PfpSectionProps) => {
 
   const randomIndices = generateUniqueRandomIndices(photos);
   return (
-    <Box className="w-full flex justify-between mt-12">
-      <Box className="h-[52px] rounded-full w-[52px] flex justify-center items-center bg-opacity-50 bg-gray-200/10">
-        <Add className=" w-6 h-6 bg-opacity-50 bg-[#4FD8E0] rounded-full object-cover" />
-      </Box>
+    <Box className="w-full flex justify-between my-4">
+      {show ? null : (
+        <Box className="h-[52px] rounded-full w-[52px] flex justify-center items-center bg-opacity-50 bg-gray-200/10">
+          <Add className=" w-6 h-6 bg-opacity-50 bg-[#4FD8E0] rounded-full object-cover" />
+        </Box>
+      )}
       {randomIndices.map((index, i) => (
         <Box
           key={index}
