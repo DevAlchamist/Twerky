@@ -21,10 +21,10 @@ const Sidebar = () => {
   ];
   return (
     <Box className="min-h-screen grid grid-row-12 flex-col justify-center items-center">
-      <Box className="row-span-1"/>
       <Box className="flex justify-start row-span-3">
         <AppIcon />
       </Box>
+      <Box className="row-span-1" />
       <Box className=" flex row-span-4 flex-col items-start justify-between">
         {icons.map((icon) => (
           <Box className="rounded-lg px-3 ">
@@ -36,7 +36,7 @@ const Sidebar = () => {
           </Box>
         ))}
       </Box>
-      <Box className="row-span-4"/>
+      <Box className="row-span-4" />
     </Box>
   );
 };

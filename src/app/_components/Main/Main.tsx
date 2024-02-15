@@ -7,9 +7,9 @@ import { Post } from "./post";
 
 const Main = () => {
   return (
-    <Box className="w-full flex my-2 flex-col justify-center items-center">
+    <Box className="w-full flex flex-col justify-center items-center mt-10">
       <Search />
-      <Box className=" overflow-y-auto h-[580px] w-full scrollbar-hide my-3">
+      <Box className=" overflow-y-auto h-[630px] w-full scrollbar-hide my-3">
         <PfpSection />
         <Post />
       </Box>

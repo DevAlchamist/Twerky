@@ -5,7 +5,7 @@ import { IconButton, InputBase, Paper } from "@mui/material";
 export const Search = () => {
   return (
     <Paper
-    className="bg-transparent bg-opacity-25 w-full mt-10 "
+    className="bg-transparent bg-opacity-25 w-full "
       component="form"
       sx={{
         borderRadius: "40px",
