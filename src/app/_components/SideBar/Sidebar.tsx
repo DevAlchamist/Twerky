@@ -16,9 +16,8 @@ const Sidebar = () => {
     { title: "Home", headIcon: <Home />, route: "/" },
     { title: "Notification", headIcon: <Notifications /> },
     { title: "Trending", headIcon: <Whatshot /> },
-    { title: "Personalization", headIcon: <Style /> },
     { title: "Profile", headIcon: <Person />, route: `/Profile` },
-    { title: "Setting", headIcon: <Settings /> },
+    { title: "Setting", headIcon: <Settings />,route:"/Setting" },
   ];
   return (
     <Box className="min-h-screen grid grid-row-12 flex-col justify-center items-center">

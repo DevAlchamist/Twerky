@@ -22,12 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className="bg-gradient-to-tr from-[#15202B] to-[#194547] flex-col flex min-h-screen">
-          <Box className="grid grid-cols-10 ">
-            <Box className="grid col-span-2">
+          <Box className="grid grid-cols-12 ">
+            <Box className="grid col-span-3">
               <Sidebar />
             </Box>
             <Box className="grid col-span-5">{children}</Box>
-            <Box className="grid col-span-3">
+            <Box className="grid col-span-4">
               <Trends />
             </Box>
           </Box>
